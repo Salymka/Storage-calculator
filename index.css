@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section{
+    display: flex;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+
+.output{
+    display: block;
+
+}
+
+.card{
+
+    width: 500px;
+    height: 350px;
+    margin: 40px auto;
+
+    border: 2px solid cadetblue;
+    border-radius: 5px;
+}
+
+
+.graphBar{
+    display: flex;
+    justify-content: left;
+    margin-left: 15px;
+}
+.site {
+    display: block;
+    width: auto;
+
+}
+
+.graph{
+    margin-left: 15px;
+    flex-direction: column;
+    border-left: 4px solid black;
+    width: 200px;
+}
+.graphElement{
+    border: 1px solid blue;
+    background: cadetblue;
+    border-left: none;
+    height: 20px;
+    width: 100%;
+
+}
+.siteAndBar{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 400px;
+
+}
+
+.graphWrapper{
+    display: flex;
+    padding: 10px 0;
+    align-items: center;
+    border-left: 4px solid black;
+    width: 290px;
+}
+.wrapperCheckAndSite{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+}
+
+.checkBtnText{
+    font-size: 12px;
+}
+
+.price{
+    padding-left: 8px;
+}

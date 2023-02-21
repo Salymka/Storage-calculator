@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Test Work</title>
+	<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="card">
+	<div class="section">
+		<div style="margin-right: 30px">
+			<output
+				id="storageLabel"
+				class="output"
+			>
+				Storage: 0 GB
+			</output>
+			<div style="display: flex; margin-top: 5px">
+				<label>0 GB</label>
+				<input type="range" id="storage" max="1000" value="0"/>
+				<label>1000 GB</label>
+			</div>
+			
+		
+		</div>
+		<div>
+			
+			<output
+				id="transferLabel"
+				class="output"
+			>Transfer: 0 GB
+			</output>
+			<div style="display: flex; margin-top: 5px">
+				<label>0 GB</label>
+				<input type="range" id="transfer" max="1000" value="0"/>
+				<label>1000 GB</label>
+			</div>
+			
+		</div>
+	
+	</div>
+	<div class="graphBar">
+		<div>
+			<div class="siteAndBar">
+				<div class="wrapperCheckAndSite">
+					<label class="site">backblaze.com</label>
+				</div>
+				<div class="graphWrapper">
+					<div class="graphElement" id="backblazeBar"></div>
+					<p class="price" id="backblazePrice">$0</p>
+				</div>
+			</div>
+			<div class="siteAndBar">
+				<div class="wrapperCheckAndSite">
+					<label class="site">bunny.net</label>
+					<div>
+						<input type="radio" name="storageType" id="hdd" value="HDD">
+						<label for="hdd" class="checkBtnText">HDD</label>
+						<input type="radio" name="storageType" id="ssd" value="SSD">
+						<label for="ssd" class="checkBtnText">SSD</label>
+					</div>
+				</div>
+				<div class="graphWrapper">
+					<div class="graphElement"></div>
+					<p class="price" id="bunnyPrice">$0</p>
+				</div>
+			</div>
+			<div class="siteAndBar">
+				<div class="wrapperCheckAndSite">
+					<label class="site">scaleway.com</label>
+					<div>
+						<input type="radio" name="Options" id="multi" value="Multi">
+						<label for="multi" class="checkBtnText">Multi</label>
+						<input type="radio" name="Options" id="single" value="Single">
+						<label for="single" class="checkBtnText">Single</label>
+					</div>
+				</div>
+				<div class="graphWrapper">
+					<div class="graphElement"></div>
+					<p class="price" id="scalewayPrice">$0</p>
+				</div>
+			</div>
+			<div class="siteAndBar">
+				<div class="wrapperCheckAndSite">
+					<label class="site">vultr.com</label>
+				</div>
+				<div class="graphWrapper">
+					<div class="graphElement"></div>
+					<p class="price" id="vultrPrice">$0</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
