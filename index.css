@@ -3,19 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
-.section{
-    display: flex;
-    margin-bottom: 15px;
-    margin-left: 15px;
-    margin-top: 10px;
-}
-
-.output{
-    display: block;
-
-}
-
 .card{
 
     width: 500px;
@@ -26,16 +13,22 @@
     border-radius: 5px;
 }
 
+.section{
+    display: flex;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-top: 10px;
+}
 
 .graphBar{
     display: flex;
     justify-content: left;
     margin-left: 15px;
 }
+
 .site {
     display: block;
     width: auto;
-
 }
 
 .graph{
@@ -49,7 +42,7 @@
     background: cadetblue;
     border-left: none;
     height: 20px;
-    width: 100%;
+    width: 25%;
 
 }
 .siteAndBar{
@@ -80,4 +73,57 @@
 
 .price{
     padding-left: 8px;
+}
+.rangeBar{
+    display: flex;
+    margin-top: 5px
+}
+.sectionItem + .sectionItem{
+    margin-left: 15px;
+}
+
+
+@media (max-width: 520px) {
+   .card{
+       display: flex;
+       flex-direction: column-reverse;
+       justify-content: start;
+       align-items: center;
+       height: 600px;
+       width: 420px;
+       padding-top: 15px;
+
+   }
+    .graphBar{
+        height: 400px;
+        margin-left: 0;
+    }
+    .siteAndBar{
+        height: auto;
+    }
+    .graphWrapper{
+        padding: 40px 0;
+    }
+    .rotateWrapper{
+        transform: rotate(-90deg);
+    }
+    .wrapperCheckAndSite{
+        transform: rotate(90deg);
+        text-align: center;
+        font-size: 14px;
+    }
+    .checkBtnText{
+        font-size: 10px;
+    }
+    .section{
+        flex-direction: column;
+    }
+    .rangeBar{
+        display: flex;
+        margin-top: 5px
+    }
+    .sectionItem + .sectionItem{
+        margin-left: 0;
+        margin-top: 15px;
+    }
 }

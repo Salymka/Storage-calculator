@@ -3,18 +3,19 @@
 <head>
 	<title>Test Work</title>
 	<link rel="stylesheet" href="index.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <div class="card">
 	<div class="section">
-		<div style="margin-right: 30px">
+		<div class="sectionItem">
 			<output
 				id="storageLabel"
-				class="output"
+				
 			>
 				Storage: 0 GB
 			</output>
-			<div style="display: flex; margin-top: 5px">
+			<div class="rangeBar">
 				<label>0 GB</label>
 				<input type="range" id="storage" max="1000" value="0"/>
 				<label>1000 GB</label>
@@ -22,14 +23,14 @@
 			
 		
 		</div>
-		<div>
+		<div class="sectionItem">
 			
 			<output
 				id="transferLabel"
-				class="output"
+				
 			>Transfer: 0 GB
 			</output>
-			<div style="display: flex; margin-top: 5px">
+			<div class="rangeBar">
 				<label>0 GB</label>
 				<input type="range" id="transfer" max="1000" value="0"/>
 				<label>1000 GB</label>
@@ -39,13 +40,13 @@
 	
 	</div>
 	<div class="graphBar">
-		<div>
+		<div class="rotateWrapper">
 			<div class="siteAndBar">
 				<div class="wrapperCheckAndSite">
 					<label class="site">backblaze.com</label>
 				</div>
 				<div class="graphWrapper">
-					<div class="graphElement" id="backblazeBar"></div>
+					<div class="graphElement" id="backblaze"></div>
 					<p class="price" id="backblazePrice">$0</p>
 				</div>
 			</div>
@@ -53,14 +54,14 @@
 				<div class="wrapperCheckAndSite">
 					<label class="site">bunny.net</label>
 					<div>
-						<input type="radio" name="storageType" id="hdd" value="HDD">
+						<input type="radio" name="storageType" id="hdd" value="HDD" >
 						<label for="hdd" class="checkBtnText">HDD</label>
 						<input type="radio" name="storageType" id="ssd" value="SSD">
 						<label for="ssd" class="checkBtnText">SSD</label>
 					</div>
 				</div>
 				<div class="graphWrapper">
-					<div class="graphElement"></div>
+					<div class="graphElement" id="bunny"></div>
 					<p class="price" id="bunnyPrice">$0</p>
 				</div>
 			</div>
@@ -75,7 +76,7 @@
 					</div>
 				</div>
 				<div class="graphWrapper">
-					<div class="graphElement"></div>
+					<div class="graphElement" id="scaleway"></div>
 					<p class="price" id="scalewayPrice">$0</p>
 				</div>
 			</div>
@@ -84,7 +85,7 @@
 					<label class="site">vultr.com</label>
 				</div>
 				<div class="graphWrapper">
-					<div class="graphElement"></div>
+					<div class="graphElement" id="vultr"></div>
 					<p class="price" id="vultrPrice">$0</p>
 				</div>
 			</div>

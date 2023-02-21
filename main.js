@@ -19,7 +19,8 @@ const sitesProp = {
         },
         transfer: 0.01,
         currentPrice: 0,
-        color: "orange"
+        color: "orange",
+        maxPrice: 10
     },
     scaleway: {
         storage: {
@@ -99,7 +100,7 @@ function calculateForBunny(storageValue, transferValue, type = sitesProp.bunny.s
     sitesProp.bunny.storage.lastChange = type;
     let productPrice = (storageValue * sitesProp.bunny.storage[sitesProp.bunny.storage.lastChange] +
         transferValue * sitesProp.bunny.transfer).toFixed(2)
-    productPrice = productPrice > 10 ? 10.00 : productPrice
+    productPrice = productPrice > sitesProp.bunny.maxPrice ? sitesProp.bunny.maxPrice : productPrice;
     document.getElementById("bunnyPrice").innerHTML = `$${productPrice}`;
     sitesProp.bunny.currentPrice = productPrice;
 }
@@ -109,15 +110,14 @@ function calculateForScaleway(storageValue, transferValue, type = sitesProp.scal
         return;
     }
     sitesProp.scaleway.storage.lastChange = type;
-    if (storageValue < 75 && transferValue < 75) {
+    if (storageValue < sitesProp.scaleway.minStorageCapacity && transferValue < sitesProp.scaleway.minStorageCapacity) {
         document.getElementById("scalewayPrice").innerHTML = `$0.00`;
         sitesProp.scaleway.currentPrice = 0;
         return;
 
     }
-    storageValue = storageValue > 75 ? storageValue : 0;
-    transferValue = transferValue > 75 ? transferValue : 0;
-    console.log(storageValue, transferValue)
+    storageValue = storageValue > sitesProp.scaleway.minStorageCapacity ? storageValue : 0;
+    transferValue = transferValue > sitesProp.scaleway.minStorageCapacity ? transferValue : 0;
     const productPrice = (storageValue * sitesProp.scaleway.storage[sitesProp.scaleway.storage.lastChange] +
         transferValue * sitesProp.scaleway.transfer).toFixed(2)
     document.getElementById("scalewayPrice").innerHTML = `$${productPrice}`;
@@ -137,16 +137,19 @@ function calculateForVultr(storageValue, transferValue) {
 }
 
 function updateGraph() {
-    const bestSite = Object.entries(sitesProp)
-        .reduce((bestSite, currentSite) => {
-            if (!bestSite) return currentSite
-            console.log(bestSite[1].currentPrice)
-            if (bestSite[1].currentPrice > currentSite[1].currentPrice) {
-                return currentSite
+    let bestSite;
+    Object.entries(sitesProp)
+        .map(site => {
+            document.getElementById(site[0]).style.width = `${25 + site[1].currentPrice * 75 / 50}%`
+            document.getElementById(site[0]).style.background = 'cadetblue'
+            if (!bestSite) {
+                return bestSite = site;
             }
-            return bestSite;
+            if (+bestSite[1].currentPrice > +site[1].currentPrice) {
+                return bestSite = site
+            }
         })
-
+    document.getElementById(bestSite[0]).style.background = bestSite[1].color
 }
 
 
